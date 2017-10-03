@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lab 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+        }
+        /*to remove jumbotron margin */
+        .jumbotron {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="jumbotron">
+    <div class="container text-center">
+      <strong><h1 style="color: blue">Fun Shop</h1></strong>
+        <p><b>Everything you want!!!</b></p>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Items</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">orders</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span>user account</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
+                <div class="panel-body">
+                    <a class="ref" href="http://usa.tommy.com/en/JACKETS-OUTERWEAR-MEN">
+                        <img   id="img1" src="Gallery/c1.jpg" class="img-responsive" style="width:100%;height: 200px" alt="Image">
+                    </a>
+                </div>
+                <!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
+                <div class="panel-body">
+                    <a class="ref" href="http://usa.tommy.com/en/JACKETS-OUTERWEAR-MEN">
+                        <img id="img2" src="Gallery/c2.jpg" class="img-responsive" style="width:100%;height: 200px" alt="Image">
+                    </a>
+                </div>
+                <!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-success">
+                <!--<div class="panel-heading">BLACK FRIDAY DEAL</div>-->
+                <div class="panel-body">
+                    <a class="ref" href="http://usa.tommy.com/en/JACKETS-OUTERWEAR-MEN">
+                        <img id="img3" src="Gallery/c3.jpg" class="img-responsive" style="width:100%;height: 200px" alt="Image">
+                    </a>
+                </div>
+                <!--<div class="panel-footer">Buy 50 mobiles and get a gift card</div>-->
+            </div>
+        </div>
+    </div>
+</div><br>
+
+
+
+<div style="color: darkorange;">
+    <select id="List" style="margin-left: 20%; width: 57%;color: lightseagreen;font-size: x-large;"  >
+        <option value="1">Clothing</option>
+        <option value="2">Accessories</option>
+        <option value="3">Supplements</option>
+        <option value="4">fitness</option>
+    </select>
+</div>
+
+<form id="radioForm" style="margin-left: 40%;">
+    <div>
+        <label> <input id="rad1" type="radio" name="radio" value="Daily"> Daily</label>
+    </div>
+    <div>
+        <label><input id="rad2" type="radio" name="radio" value="Weekly"> Weekly</label>
+    </div>
+    <div>
+        <label><input id="rad3" type="radio" name="radio" value="Monthly" > Monthly</label>
+    </div>
+</form>
+
+
+<script>
+    var fitness = [
+        "Gallery/fi1.jpg",
+        "Gallery/fi2.jpg",
+        "Gallery/fi3.png",
+        "Gallery/fi4.jpg",
+        "Gallery/fi5.jpg",
+        "Gallery/fi6.jpg"
+    ];
+    var Accessories = [
+        "Gallery/A1.jpg",
+        "Gallery/A2.jpg",
+        "Gallery/A3.jpg",
+        "Gallery/A4.jpg",
+        "Gallery/A5.jpg",
+        "Gallery/A6.jpg"
+    ];
+    var Clothing = [
+        "Gallery/c1.jpg",
+        "Gallery/c2.jpg",
+        "Gallery/c3.jpg",
+        "Gallery/c4.jpg",
+        "Gallery/c5.jpg",
+        "Gallery/c6.jpg"
+    ];
+    var Supplements = [
+        "Gallery/s1.jpg",
+        "Gallery/s2.jpg",
+        "Gallery/s3.jpg",
+        "Gallery/s4.jpg",
+        "Gallery/s5.jpg",
+        "Gallery/s6.jpg"
+    ];
+    $('#List').change(function () {
+        if ($("#List option:selected").text() == "fitness") {
+            $('#img1').attr("src", fitness[0]);
+            $('#img2').attr("src", fitness[1]);
+            $('#img3').attr("src", fitness[2]);
+            $('.ref').attr('href','https://www.walmart.com/browse/sports-outdoors/exercise-fitness-accessories/4125_4134_1078104');
+        }
+        if ($("#List option:selected").text() == "Accessories") {
+            $('#img1').attr("src", Accessories[0]);
+            $('#img2').attr("src", Accessories[1]);
+            $('#img3').attr("src", Accessories[2]);
+            $('.ref').attr('href','https://www.flipkart.com/tommy-hilfiger-men-brown-genuine-leather-wallet/p/itmev2jmezryw82z?pid=WCWEV2JMZ9UVC59Z&srno=b_1_1&otracker=clp_metro_expandable_4_mensb-categ-01d79_Wallets_mens-bags-wallet-store_ATBK0ZYNUY_wp3&lid=LSTWCWEV2JMZ9UVC59ZXUV28V&iid=aed8ce97-8e04-41b5-b876-e2b089c1bc82.WCWEV2JMZ9UVC59Z.SEARCH');
+        }
+        if ($("#List option:selected").text() == "Supplements") {
+            $('#img1').attr("src", Supplements[0]);
+            $('#img2').attr("src", Supplements[1]);
+            $('#img3').attr("src", Supplements[2]);
+            $('.ref').attr('href','https://www.flipkart.com/nike-chroma-thong-5-flip-flops/p/itmessgpu3gfzqjm?pid=SFFESSGPG79BWHTA&srno=b_1_4&otracker=nmenu_sub_Men_0_Flip-%20Flops&lid=LSTSFFESSGPG79BWHTAGWKUBC&fm=merchandising&iid=7e213865-7dd5-4892-9901-3d24de338508.SFFESSGPG79BWHTA.SEARCH');
+        }
+        if ($("#List option:selected").text() == "Clothing") {
+            $('#img1').attr1("src", Clothing[0]);
+            $('#img2').attr("src", Clothing[1]);
+            $('#img3').attr("src", Clothing[2]);
+            $('.ref').attr('href','http://usa.tommy.com/en/men-shirts');
+        }
+    });
+    $("input[name=radio]:radio").change(function () {
+        if ($("#rad1").is(':checked')) {
+            if ($("#List option:selected").text() == "Accessories") {
+                $('#img1').attr("src", Accessories[3]);
+                $('#img2').attr("src", Accessories[2]);
+                $('#img3').attr("src", Accessories[1]);
+                $('.ref').attr('href','https://www.flipkart.com/tommy-hilfiger-men-brown-genuine-leather-wallet/p/itmev2jmezryw82z?pid=WCWEV2JMZ9UVC59Z&srno=b_1_1&otracker=clp_metro_expandable_4_mensb-categ-01d79_Wallets_mens-bags-wallet-store_ATBK0ZYNUY_wp3&lid=LSTWCWEV2JMZ9UVC59ZXUV28V&iid=aed8ce97-8e04-41b5-b876-e2b089c1bc82.WCWEV2JMZ9UVC59Z.SEARCH');
+            }
+            if ($("#List option:selected").text() == "fitness") {
+                $('#img1').attr("src", fitness[3]);
+                $('#img2').attr("src", fitness[2]);
+                $('#img3').attr("src", fitness[1]);
+                $('.ref').attr('href','https://www.walmart.com/browse/sports-outdoors/exercise-fitness-accessories/4125_4134_1078104');
+            }
+            if ($("#List option:selected").text() == "Supplements") {
+                $('#img1').attr("src", Supplements[3]);
+                $('#img2').attr("src", Supplements[2]);
+                $('#img3').attr("src", Supplements[1]);
+                $('.ref').attr('href','https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=supplements');
+            }
+            if ($("#List option:selected").text() == "Clothing") {
+                $('#img1').attr("src", Clothing[3]);
+                $('#img2').attr("src", Clothing[2]);
+                $('#img3').attr("src", Clothing[1]);
+                $('.ref').attr('href','http://usa.tommy.com/en/men/suits-dressshirts-men/tailored-collection-slim-fit-shirt-tt01523');
+            }
+        }
+        if ($("#rad3").is(':checked')) {
+            if ($( "#List option:selected" ).text()== "Accessories" ){
+                $('#img1').attr("src",Accessories[1]);
+                $('#img2').attr("src",Accessories[2]);
+                $('#img3').attr("src",Accessories[4]);
+                $('.ref').attr('href','https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dhpc&field-keywords=accessories+for+men&rh=n%3A3760901%2Ck%3Aaccessories+for+men');}
+            if ($( "#List option:selected" ).text()== "fitness" ){
+                $('#img1').attr("src",fitness[1]);
+                $('#img2').attr("src",fitness[2]);
+                $('#img3').attr("src",fitness[4]);
+                $('.ref').attr('href','https://www.walmart.com/browse/sports-outdoors/exercise-fitness-accessories/4125_4134_1078104');
+            }
+            if ($( "#List option:selected" ).text()== "Supplements" ){
+                $('#img1').attr("src",Supplements[1]);
+                $('#img2').attr("src",Supplements[2]);
+                $('#img3').attr("src",Supplements[4]);
+                $('.ref').attr('href','https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=supplements');
+            }
+            if ($( "#List option:selected" ).text()== "Clothing" ){
+                $('#img1').attr("src",Clothing[1]);
+                $('#img2').attr("src",Clothing[2]);
+                $('#img3').attr("src",Clothing[4]);
+                $('.ref').attr('href','http://usa.tommy.com/en/men-hilfiger-edition');}
+        }
+        if ($("#rad2").is(':checked')) {
+            if ($( "#List option:selected" ).text()== "Accessories" +
+                "" ){
+                $('#img1').attr("src",Accessories[2]);
+                $('#img2').attr("src",Accessories[4]);
+                $('#img3').attr("src",Accessories[3]);
+                $('.ref').attr('href','https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dhpc&field-keywords=accessories+for+men&rh=n%3A3760901%2Ck%3Aaccessories+for+men');
+            }
+            if ($( "#List option:selected" ).text()== "fitness" ){
+                $('#img1').attr("src",fitness[2]);
+                $('#img2').attr("src",fitness[4]);
+                $('#img3').attr("src",fitness[3]);
+                $('.ref').attr('href','https://www.walmart.com/browse/sports-outdoors/exercise-fitness-accessories/4125_4134_1078104');
+            }
+            if ($( "#List option:selected" ).text()== "Supplements" ){
+                $('#img1').attr("src",Supplements[2]);
+                $('#img2').attr("src",Supplements[4]);
+                $('#img3').attr("src",Supplements[3]);
+                $('.ref').attr('href','https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=supplements');
+            }
+            if ($( "#List option:selected" ).text()== "Clothing" ){
+                $('#img1').attr("src",Clothing[2]);
+                $('#img2').attr("src",Clothing[4]);
+                $('#img3').attr("src",Clothing[3]);
+                $('.ref').attr('href','http://usa.tommy.com/en/JACKETS-OUTERWEAR-MEN');
+            }
+        }
+    });
+</script>
+
+
+
+</body>
+</html>
