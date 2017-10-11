@@ -1,0 +1,40 @@
+
+#map-canvas {
+    height: 400px;
+    margin-left: 4%;
+    margin-top:1%;
+    border-radius: 5px;
+    border: 1px solid #804a43;
+}
+.form-control{
+    border-radius:8px;
+}
+.weatherDetails{
+    font-family: Microsoft sans-serif;
+    font-size:40px;
+}
+
+.main {
+    margin:1%;
+
+}
+.navbar{
+    padding:1%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar-brand {
+    color: #86ff64;
+    padding-left: 42%;
+    font-size: 35px;
+}
+.h2{
+    margin:40%;
+}
+
+#weather{
+    height: 700px;
+    margin: 4%;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
